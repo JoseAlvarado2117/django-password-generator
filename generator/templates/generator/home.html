@@ -1,0 +1,45 @@
+{% extends 'generator/layout.html' %}
+
+{% block content%}
+<form action="{% url 'password' %}" style="background-color: #FFF" class="p-4 rounded">
+  <h1 class="mb-5 text-center">Password Generator</h1>
+
+  <div class="mb-3">
+    <label for="length" class="form-label">Select the length of your password: </label>
+    <select name="length" id="length" class="form-select">
+      <option value="6">6 characters</option>
+      <option value="7">7 characters</option>
+      <option value="8">8 characters</option>
+      <option value="9">9 characters</option>
+      <option value="10">10 characters</option>
+      <option value="11">11 characters</option>
+      <option value="12">12 characters</option>
+      <option value="13">13 characters</option>
+      <option value="14">14 characters</option>
+      <option value="18">18 characters</option>
+      <option value="22">22 characters</option>
+      <option value="25">25 characters</option>
+      <option value="30">30 characters</option>
+      <option value="35">35 characters</option>
+    </select>
+  </div>
+
+  <div class="form-check form-switch mb-3">
+    <input type="checkbox" class="form-check-input" name="uppercase" id="uppercase">
+    <label for="uppercase" class="form-label">Uppercase Characters</label>
+  </div>
+
+  <div class="form-check form-switch mb-3">
+    <input type="checkbox" class="form-check-input" name="special" id="special">
+    <label for="special" class="form-label">Special Characters</label>
+  </div>
+  <div class="form-check form-switch mb-3">
+    <input type="checkbox" class="form-check-input" name="numbers" id="numbers">
+    <label for="numbers" class="form-label">Numbers Characters</label>
+  </div>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button class="btn btn-primary">Generate Password</button>
+  </div>
+</form>
+
+{% endblock %}
